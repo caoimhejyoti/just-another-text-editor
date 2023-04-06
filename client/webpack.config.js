@@ -1,8 +1,7 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const WebpackPwaManifest = require("webpack-pwa-manifest");
-const path = require("path");
-const { InjectManifest } = require("workbox-webpack-plugin");
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+const path = require('path');
+const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = () => {
   return {
@@ -21,18 +20,18 @@ module.exports = () => {
         title: "J.A.T.E",
       }),
       new InjectManifest({
-        swSRC: "./src-sw.js",
+        swSrc: "/src-sw.js",
         swDest: "src-sw.js",
       }),
       new WebpackPwaManifest({
         name: "Just Another Text Editor",
         short_name: "J.A.T.E",
         description: "Online text editor with offline capabilities",
-        start_url: "./",
-        publicPath: "./",
+        start_url: "/",
+        publicPath: "/",
         icons: [
           {
-            src: path.resolve("src/images/localStorage.png"),
+            src: path.resolve("src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join("assets", "icons"),
           },
